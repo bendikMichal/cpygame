@@ -17,6 +17,7 @@
 # include "libs/rect.h"
 # include "libs/key.h"
 
+// there is a thing abt struct being too big maybe use calloc?
 typedef struct cpygame {
 	void (*init)();
 	void (*quit)();
@@ -96,12 +97,11 @@ typedef struct cpygame {
 	//
 } cpygame;
 
-extern cpygame cpg;
+extern cpygame *cpgP;
+# define cpg (* cpgP)
 
 void init ();
 void quit ();
-
-void autobind (void);
 
 #endif
 

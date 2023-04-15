@@ -97,12 +97,11 @@ typedef struct cpygame {
 	//
 } cpygame;
 
-extern cpygame cpg;
+extern cpygame *cpgP;
+# define cpg (* cpgP)
 
 void init ();
 void quit ();
-
-void autobind (void);
 
 #endif
 
