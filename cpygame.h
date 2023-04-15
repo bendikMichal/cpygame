@@ -17,6 +17,7 @@
 # include "libs/rect.h"
 # include "libs/key.h"
 
+// there is a thing abt struct being too big maybe use calloc?
 typedef struct cpygame {
 	void (*init)();
 	void (*quit)();

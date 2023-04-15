@@ -1,4 +1,6 @@
 
+#ifndef _RECT_H
+#define _RECT_H
 
 # include <SDL2/SDL_rect.h>
 # include <stdbool.h>
@@ -42,3 +44,5 @@ float rect_get_right (CPG_Rect *rect);
 bool rect_colliderect(CPG_Rect *self, CPG_Rect *rect);
 
 CPG_Rect rect_Rect (float x, float y, float w, float h);
+
+#endif

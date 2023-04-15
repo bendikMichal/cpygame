@@ -3,8 +3,8 @@
 # include <stdbool.h>
 # include <math.h>
 
-# include <cpygame.h>
-/* # include "cpygame.h" */
+/* # include <cpygame.h> */
+# include "cpygame.h"
 
 int SDL_main(int argc, char *argv[]) {
 /* int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd) { */
