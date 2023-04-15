@@ -2,6 +2,14 @@
 #ifndef _CPYGAME_H
 #define _CPYGAME_H
 
+# ifndef main
+# define CPGmain(argc, argv) main(argc, argv)
+# endif
+
+# ifndef CPGmain
+# define CPGmain(argc, argv) SDL_main(argc, argv)
+# endif
+
 /*
  *	How the including works:
  *		all *.h files are included in main cpygame.h file which is then included in all *.c files

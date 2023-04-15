@@ -6,12 +6,6 @@
 # include <cpygame.h>
 /* # include "cpygame.h" */
 
-# ifndef main
-# define CPGmain(argc, argv) main(argc, argv)
-# endif
-# ifndef CPGmain
-# define CPGmain(argc, argv) SDL_main(argc, argv)
-# endif
 
 int CPGmain(int argc, char *argv[]) {
 /* int SDL_main(int argc, char *argv[]) { */

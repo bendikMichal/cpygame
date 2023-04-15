@@ -1,8 +1,8 @@
 Hopefuly me or someone makes documentation, though the usage should not be that much different from pygame
 
-example code can be found in `test.c`, though it will periodically be changed based on the stuff I'm working at.
+example code can be found in `test.c`, though it will periodically be changed based on the stuff I'm working on.
 
-There are also build scripts (for windows only, arch script will be added soon ) `build.bat` to build and run `test.c`.
+There are also build scripts (for windows only, arch script has the same names but ends with .sh) `build.bat` to build and run `test.c`.
 There is also `lib.bat` used to build the library, which will be then located in `./buildlib/`.
 
 Disclaimer: 
