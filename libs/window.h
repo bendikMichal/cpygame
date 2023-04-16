@@ -1,5 +1,5 @@
 
-#ifndef _WINDOW_H
+# ifndef _WINDOW_H
 # define _WINDOW_H
 
 
@@ -20,4 +20,4 @@ typedef struct Window {
 void window_blit(SDL_Texture *texture, int pos[2]);
 void window_fill(int color[3]);
 
-#endif
+# endif

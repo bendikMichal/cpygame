@@ -1,6 +1,7 @@
 # include <stdio.h>
 
 # include <stdbool.h>
+# include <string.h>
 # include <math.h>
 
 # include <cpygame.h>
@@ -22,7 +23,10 @@ int CPGmain(int argc, char *argv[]) {
 	Window window = cpg.display.set_mode(size, 0);
 	CPG_Surface surf = cpg.Surface(size);
 
-	cpg.display.set_caption("Test captions");
+	char Window_title[64] = "";
+	char Window_name[] = "Test captions";
+	char fps_string[16] = "0";
+	cpg.display.set_caption(Window_title);
 
 	// loading images
 	SDL_Texture *image = cpg.image.load("mountains_1.png");
@@ -32,6 +36,8 @@ int CPGmain(int argc, char *argv[]) {
 	SDL_Texture *text = cpg.font.render("hello world", false, white);
 
 	const Uint8 *keys = cpg.key.get_pressed();
+
+	const int fps = 60;
 
 	bool main = true;
 	while (main) {
@@ -52,6 +58,11 @@ int CPGmain(int argc, char *argv[]) {
 		window.blit(text, corner);
 
 		cpg.display.update();
+		cpg.clock.tick(fps);
+
+		itoa(cpg.clock.get_fps(), fps_string, 10);
+		sprintf(Window_title, "%s - %s", Window_name, fps_string);
+		cpg.display.set_caption(Window_title);
 	}
 
 	SDL_DestroyWindow(window.window);

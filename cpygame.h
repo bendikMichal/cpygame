@@ -10,6 +10,9 @@
 # define CPGmain(argc, argv) SDL_main(argc, argv)
 # endif
 
+# define MILISECOND 1000
+# define DEFAULT_FPS 60
+
 /*
  *	How the including works:
  *		all *.h files are included in main cpygame.h file which is then included in all *.c files
@@ -24,8 +27,8 @@
 # include "libs/font.h"
 # include "libs/rect.h"
 # include "libs/key.h"
+# include "libs/clock.h"
 
-// there is a thing abt struct being too big maybe use calloc?
 typedef struct cpygame {
 	void (*init)();
 	void (*quit)();
@@ -38,6 +41,7 @@ typedef struct cpygame {
 	Image image;
 	Font font;
 	Key key;
+	Clock clock;
 
 	CPG_Surface (*Surface) (int [2]);
 	CPG_Rect (*Rect) (float, float, float, float);

@@ -3,11 +3,12 @@
 
 # include <stdio.h>
 # include <stdbool.h>
+# include <stdlib.h>
+
 # include <SDL2/SDL.h>
 # include <SDL2/SDL_image.h>
 # include <SDL2/SDL_ttf.h>
 # include <SDL2/SDL_keycode.h>
-#include <stdlib.h>
 
 # include "cpygame.h"
 
@@ -41,6 +42,11 @@ void init() {
 	cpg.Rect = &rect_Rect;
 
 	cpg.key.get_pressed = &key_get_pressed;
+
+	cpg.clock.tick = &clock_tick;
+	cpg.clock.get_fps = &clock_get_fps;
+	cpg.clock.frameSTART = SDL_GetTicks();
+	cpg.clock.frameDELAY = MILISECOND / DEFAULT_FPS;
 
 	// keys
 	cpg.K_0 = SDL_SCANCODE_0;
