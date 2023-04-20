@@ -60,8 +60,8 @@ int CPGmain(int argc, char *argv[]) {
 		cpg.display.update();
 		cpg.clock.tick(fps);
 
-		itoa(cpg.clock.get_fps(), fps_string, 10);
-		sprintf(Window_title, "%s - %s", Window_name, fps_string);
+		/* itoa(cpg.clock.get_fps(), fps_string, 10); */
+		sprintf(Window_title, "%s - %f", Window_name, cpg.clock.get_fps());
 		cpg.display.set_caption(Window_title);
 	}
 
