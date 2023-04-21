@@ -8,7 +8,7 @@
 /* # include "cpygame.h" */
 
 
-int CPGmain(int argc, char *argv[]) {
+int CPG_main(int argc, char *argv[]) {
 /* int SDL_main(int argc, char *argv[]) { */
 	cpg.init();
 	/* init(); */
@@ -20,7 +20,7 @@ int CPGmain(int argc, char *argv[]) {
 
 	// window & surface
 	int size[2] = {640, 420};
-	Window window = cpg.display.set_mode(size, 0);
+	CPG_Window window = cpg.display.set_mode(size, 0);
 	CPG_Surface surf = cpg.Surface(size);
 
 	char Window_title[64] = "";

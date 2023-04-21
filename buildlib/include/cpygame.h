@@ -3,11 +3,11 @@
 #define _CPYGAME_H
 
 # ifndef main
-# define CPGmain(argc, argv) main(argc, argv)
+# define CPG_main(argc, argv) main(argc, argv)
 # endif
 
-# ifndef CPGmain
-# define CPGmain(argc, argv) SDL_main(argc, argv)
+# ifndef CPG_main
+# define CPG_main(argc, argv) SDL_main(argc, argv)
 # endif
 
 # define MILISECOND 1000
@@ -35,7 +35,7 @@ typedef struct cpygame {
 
 	SDL_Event event;
 
-	Window window;
+	CPG_Window window;
 	Mouse mouse;
 	Display display;
 	Image image;

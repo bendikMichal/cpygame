@@ -5,14 +5,14 @@
 
 #include <SDL2/SDL_render.h>
 
-typedef struct Window {
+typedef struct CPG_Window {
 	SDL_Window *window;
 	SDL_Renderer *renderer;
 
 	void (*blit)(SDL_Texture*, int[2]);
 	void (*fill)(int[3]);
 
-} Window;
+} CPG_Window;
 
 /* void blit(, int pos[2]); */
 

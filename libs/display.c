@@ -9,19 +9,19 @@
  */
 # include "../cpygame.h"
 
-static Window def_window = {
+static CPG_Window def_window = {
 	.fill = &window_fill,
 	.blit = &window_blit,
 };
 
-Window display_set_mode(int size[2], int falgs) {
+CPG_Window display_set_mode(int size[2], int falgs) {
 	SDL_Window *sdl_window = SDL_CreateWindow("Cpygame Window", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, size[0], size[1], SDL_WINDOW_OPENGL);
 
 	static SDL_Renderer *renderer;
 	renderer = SDL_CreateRenderer(sdl_window, -1, 0);
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 
-	Window window = def_window;
+	CPG_Window window = def_window;
 
 	window.window = sdl_window;
 	window.renderer = renderer;
