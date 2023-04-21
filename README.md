@@ -1,3 +1,8 @@
+
+# Cpygame
+- A pygame-like c framework
+- you can read more about [pygame](https://www.pygame.org/news), (! This is not an official port of pygame for c !)
+
 Hopefuly me or someone makes documentation, though the usage should not be that much different from pygame
 
 example code can be found in `test.c`, though it will periodically be changed based on the stuff I'm working on.
