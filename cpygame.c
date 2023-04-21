@@ -19,7 +19,7 @@ cpygame *cpgP = &cpg_only_init;
 
 void init() {
 	printf("\n Welcome to cpygame a pygame inspired library for c\n");
-	printf("\tVisit www.pygame.org for more info about pygame\n");
+	printf("\t Visit www.pygame.org for more info about pygame\n");
 
 	cpgP = (cpygame *) calloc(1, sizeof(cpygame));
 	/* printf("%llu", sizeof(cpygame)); */

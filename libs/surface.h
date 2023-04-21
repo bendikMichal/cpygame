@@ -2,10 +2,11 @@
 # ifndef _SURFACE_H
 # define _SURFACE_H
 
-#include <SDL2/SDL_render.h>
+# include <SDL2/SDL_render.h>
 
 typedef struct CPG_Surface {
 	SDL_Texture* surface;
+	int type;
 	
 	void (*blit) (struct CPG_Surface, SDL_Texture*, int[2]);
 	void (*fill) (struct CPG_Surface, int[3]);

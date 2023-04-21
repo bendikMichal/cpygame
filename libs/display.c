@@ -12,6 +12,7 @@
 static CPG_Window def_window = {
 	.fill = &window_fill,
 	.blit = &window_blit,
+	.type = TYPE_CPG_WINDOW
 };
 
 CPG_Window display_set_mode(int size[2], int falgs) {

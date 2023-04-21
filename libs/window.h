@@ -8,6 +8,7 @@
 typedef struct CPG_Window {
 	SDL_Window *window;
 	SDL_Renderer *renderer;
+	int type;
 
 	void (*blit)(SDL_Texture*, int[2]);
 	void (*fill)(int[3]);

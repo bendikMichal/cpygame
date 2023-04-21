@@ -15,6 +15,7 @@ CPG_Surface surface_Surface(int size[2]) {
 		.surface = newSurf,
 		.blit = &surface_blit,
 		.fill = &surface_fill,
+		.type = TYPE_CPG_SURFACE
 	};
 	return surf;
 }

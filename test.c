@@ -4,8 +4,8 @@
 # include <string.h>
 # include <math.h>
 
-# include <cpygame.h>
-/* # include "cpygame.h" */
+/* # include <cpygame.h> */
+# include "cpygame.h"
 
 
 int CPG_main(int argc, char *argv[]) {
@@ -28,6 +28,9 @@ int CPG_main(int argc, char *argv[]) {
 	char fps_string[16] = "0";
 	cpg.display.set_caption(Window_title);
 
+	CPG_Rect testrect = cpg.Rect(0, 0, 1, 2);
+	draw_rect(window, red, testrect);
+	draw_rect(surf, red, testrect);
 	// loading images
 	SDL_Texture *image = cpg.image.load("mountains_1.png");
 
