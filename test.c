@@ -4,8 +4,8 @@
 # include <string.h>
 # include <math.h>
 
-/* # include <cpygame.h> */
-# include "cpygame.h"
+# include <cpygame.h>
+/* # include "cpygame.h" */
 
 
 int CPG_main(int argc, char *argv[]) {

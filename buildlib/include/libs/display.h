@@ -1,6 +1,6 @@
 
-#ifndef _DISPLAY_H
-#define _DISPLAY_H
+# ifndef _DISPLAY_H
+# define _DISPLAY_H
 
 typedef struct Display{
 	CPG_Window (*set_mode)(int[2], int);
@@ -14,4 +14,4 @@ CPG_Window display_set_mode(int size[2], int falgs);
 void display_set_caption(char *title);
 void display_update();
 
-#endif
+# endif

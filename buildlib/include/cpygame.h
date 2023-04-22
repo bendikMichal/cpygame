@@ -13,6 +13,9 @@
 # define MILISECOND 1000
 # define DEFAULT_FPS 60
 
+# define TYPE_CPG_WINDOW  0
+# define TYPE_CPG_SURFACE 1
+
 /*
  *	How the including works:
  *		all *.h files are included in main cpygame.h file which is then included in all *.c files
@@ -28,6 +31,7 @@
 # include "libs/rect.h"
 # include "libs/key.h"
 # include "libs/clock.h"
+# include "libs/draw.h"
 
 typedef struct cpygame {
 	void (*init)();
