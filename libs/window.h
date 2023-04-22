@@ -6,13 +6,14 @@
 #include <SDL2/SDL_render.h>
 
 typedef struct CPG_Window {
-	SDL_Window *window;
-	SDL_Renderer *renderer;
+	// order of these is very important, wrong orderwill crash the lib
 	int type;
 
 	void (*blit)(SDL_Texture*, int[2]);
 	void (*fill)(int[3]);
 
+	SDL_Window *window;
+	SDL_Renderer *renderer;
 } CPG_Window;
 
 /* void blit(, int pos[2]); */

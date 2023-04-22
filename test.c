@@ -15,6 +15,8 @@ int CPG_main(int argc, char *argv[]) {
 
 	// others
 	int red[3] = {255, 0, 0};
+	int blue[3] = {0, 0, 255};
+	int yellow[3] = {255, 255, 0};
 	SDL_Color white = {255, 255, 255};
 	int corner[2] = {0, 0};
 
@@ -28,9 +30,9 @@ int CPG_main(int argc, char *argv[]) {
 	char fps_string[16] = "0";
 	cpg.display.set_caption(Window_title);
 
-	CPG_Rect testrect = cpg.Rect(0, 0, 1, 2);
-	draw_rect(window, red, testrect);
-	draw_rect(surf, red, testrect);
+	CPG_Rect testrect = cpg.Rect(0, 0, 100, 200);
+	CPG_Rect testrect2 = cpg.Rect(100, 0, 100, 200);
+
 	// loading images
 	SDL_Texture *image = cpg.image.load("mountains_1.png");
 
@@ -58,6 +60,10 @@ int CPG_main(int argc, char *argv[]) {
 		// drawing 
 		window.fill(red);
 
+		draw_rect(surf, yellow, testrect);
+		draw_rect(window, blue, testrect2);
+
+		/* window.blit(surf.surface, corner); */
 		window.blit(text, corner);
 
 		cpg.display.update();
@@ -72,7 +78,7 @@ int CPG_main(int argc, char *argv[]) {
 	// do you need to free textures or does destroy renderer do it for you ?
 	SDL_DestroyTexture(image);
 	SDL_DestroyTexture(text);
-	SDL_DestroyTexture(surf.surface);
+	/* SDL_DestroyTexture(surf.surface); */
 
 	cpg.quit();
 	return 0;

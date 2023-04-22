@@ -5,11 +5,13 @@
 # include <SDL2/SDL_render.h>
 
 typedef struct CPG_Surface {
-	SDL_Texture* surface;
+	// order of these is very important, wrong orderwill crash the lib
 	int type;
 	
 	void (*blit) (struct CPG_Surface, SDL_Texture*, int[2]);
 	void (*fill) (struct CPG_Surface, int[3]);
+
+	SDL_Texture* surface;
 
 } CPG_Surface;
 
