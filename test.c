@@ -60,8 +60,8 @@ int CPG_main(int argc, char *argv[]) {
 		// drawing 
 		window.fill(red);
 
-		cpg_draw_rect(surf, yellow, testrect);
-		cpg_draw_rect(window, blue, testrect2);
+		cpg.draw.rect(ToCPG_Obj(surf), yellow, testrect);
+		cpg.draw.rect(ToCPG_Obj(window), blue, testrect2);
 
 		/* window.blit(surf.surface, corner); */
 		window.blit(text, corner);

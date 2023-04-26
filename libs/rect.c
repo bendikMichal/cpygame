@@ -45,6 +45,8 @@ bool rect_colliderect(CPG_Rect *self, CPG_Rect *rect) {
 
 CPG_Rect rect_Rect (float x, float y, float w, float h) {
 	CPG_Rect new_rect = {
+		.type = TYPE_CPG_RECT,
+			
 		.x = x,
 		.y = y,
 		.w = w,

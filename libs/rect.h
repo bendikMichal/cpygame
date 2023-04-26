@@ -5,7 +5,10 @@
 # include <SDL2/SDL_rect.h>
 # include <stdbool.h>
 
+# include "Type.h"
+
 typedef struct CPG_Rect {
+	int type;
 
 	float x, y;
 	float w, h;

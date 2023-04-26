@@ -13,15 +13,13 @@
 # define MILISECOND 1000
 # define DEFAULT_FPS 60
 
-# define TYPE_CPG_WINDOW  0
-# define TYPE_CPG_SURFACE 1
-
 /*
  *	How the including works:
  *		all *.h files are included in main cpygame.h file which is then included in all *.c files
  *		Kinda like inheritance in c#
  *
  */
+# include "libs/Type.h"
 # include "libs/window.h"
 # include "libs/display.h"
 # include "libs/mouse.h"
@@ -46,6 +44,7 @@ typedef struct cpygame {
 	Font font;
 	Key key;
 	Clock clock;
+	Draw draw;
 
 	CPG_Surface (*Surface) (int [2]);
 	CPG_Rect (*Rect) (float, float, float, float);

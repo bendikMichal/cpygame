@@ -48,6 +48,8 @@ void init() {
 	cpg.clock.frameSTART = SDL_GetTicks();
 	cpg.clock.frameDELAY = MILISECOND / DEFAULT_FPS;
 
+	cpg.draw.rect = &draw_rect;
+
 	// keys
 	cpg.K_0 = SDL_SCANCODE_0;
 	cpg.K_1 = SDL_SCANCODE_1;

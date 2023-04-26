@@ -19,18 +19,33 @@ void draw_rect_surface(CPG_Surface *surface, int color[3], CPG_Rect rect) {
 	SDL_SetRenderTarget(cpg.window.renderer, NULL);
 }
 
-void draw_rect_switch(int *type, int color[3], CPG_Rect rect) {
-	switch (*type) {
+void draw_rect(CPG_Obj *obj, int color[3], CPG_Rect rect) {
+	switch (obj->type) {
 		case TYPE_CPG_WINDOW: ;
-			draw_rect_window((CPG_Window *)type, color, rect);
+			draw_rect_window((CPG_Window *)obj, color, rect);
 			break;
 
 		case TYPE_CPG_SURFACE: ;
-			draw_rect_surface((CPG_Surface *)type, color, rect);
+			draw_rect_surface((CPG_Surface *)obj, color, rect);
 			break;
 	
 		deafult:
 			printf("Failed to draw rect as provided is not of a type CPG_Window or CPG_Surface");
 	}
 }
+
+/* void draw_rect_switch(int *type, int color[3], CPG_Rect rect) { */
+/* 	switch (*type) { */
+/* 		case TYPE_CPG_WINDOW: ; */
+/* 			draw_rect_window((CPG_Window *)type, color, rect); */
+/* 			break; */
+
+/* 		case TYPE_CPG_SURFACE: ; */
+/* 			draw_rect_surface((CPG_Surface *)type, color, rect); */
+/* 			break; */
+	
+/* 		deafult: */
+/* 			printf("Failed to draw rect as provided is not of a type CPG_Window or CPG_Surface"); */
+/* 	} */
+/* } */
 
