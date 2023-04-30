@@ -1,11 +1,16 @@
 
-#ifndef _RECT_H
-#define _RECT_H
+# ifndef _RECT_H
+# define _RECT_H
 
 # include <SDL2/SDL_rect.h>
 # include <stdbool.h>
 
+# ifndef _TYPE_H
+# define _TYPE_H
+
 # include "Type.h"
+
+# endif
 
 typedef struct CPG_Rect {
 	int type;

@@ -63,7 +63,7 @@ int CPG_main(int argc, char *argv[]) {
 		cpg.draw.rect(ToCPG_Obj(surf), yellow, testrect);
 		cpg.draw.rect(ToCPG_Obj(window), blue, testrect2);
 
-		/* window.blit(surf.surface, corner); */
+		window.blit(surf.surface, corner);
 		window.blit(text, corner);
 
 		cpg.display.update();
