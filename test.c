@@ -11,7 +11,6 @@
 int CPG_main(int argc, char *argv[]) {
 /* int SDL_main(int argc, char *argv[]) { */
 	cpg.init();
-	/* init(); */
 
 	// others
 	int red[3] = {255, 0, 0};
@@ -32,6 +31,8 @@ int CPG_main(int argc, char *argv[]) {
 
 	CPG_Rect testrect = cpg.Rect(0, 0, 100, 200);
 	CPG_Rect testrect2 = cpg.Rect(100, 0, 100, 200);
+
+	CPG_Circle testcircle = cpg.Circle(50, 150, 40);
 
 	// loading images
 	SDL_Texture *image = cpg.image.load("mountains_1.png");
@@ -62,6 +63,8 @@ int CPG_main(int argc, char *argv[]) {
 
 		cpg.draw.rect(ToCPG_Obj(surf), yellow, testrect);
 		cpg.draw.rect(ToCPG_Obj(window), blue, testrect2);
+		cpg.draw.circle(ToCPG_Obj(window), blue, testcircle, 0);
+		cpg.draw.circle(ToCPG_Obj(window), yellow, testcircle, 1);
 
 		/* window.blit(surf.surface, corner); */
 		window.blit(text, corner);

@@ -27,6 +27,7 @@
 # include "libs/surface.h"
 # include "libs/font.h"
 # include "libs/rect.h"
+# include "libs/circle.h"
 # include "libs/key.h"
 # include "libs/clock.h"
 # include "libs/draw.h"
@@ -48,6 +49,7 @@ typedef struct cpygame {
 
 	CPG_Surface (*Surface) (int [2]);
 	CPG_Rect (*Rect) (float, float, float, float);
+	CPG_Circle (*Circle) (float, float, float);
 
 	// keys
 	int K_0;

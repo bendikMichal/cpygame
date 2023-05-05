@@ -6,6 +6,7 @@
 # define TYPE_CPG_WINDOW  0
 # define TYPE_CPG_SURFACE 1
 # define TYPE_CPG_RECT 2
+# define TYPE_CPG_CIRCLE 3
 
 typedef struct {
     int type;

@@ -40,6 +40,7 @@ void init() {
 
 	cpg.Surface = &surface_Surface;
 	cpg.Rect = &rect_Rect;
+	cpg.Circle = &circle_Circle;
 
 	cpg.key.get_pressed = &key_get_pressed;
 
@@ -49,6 +50,8 @@ void init() {
 	cpg.clock.frameDELAY = MILISECOND / DEFAULT_FPS;
 
 	cpg.draw.rect = &draw_rect;
+
+	cpg.draw.circle = &draw_circle;
 
 	// keys
 	cpg.K_0 = SDL_SCANCODE_0;
