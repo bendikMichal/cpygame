@@ -4,6 +4,7 @@
 # include <math.h>
 
 # include "../cpygame.h"
+#include "Type.h"
 
 void draw_rect_window(CPG_Window *window, int color[3], CPG_Rect rect) {
 	SDL_Rect temp = {rect.x, rect.y, rect.w, rect.h};
@@ -23,11 +24,11 @@ void draw_rect_surface(CPG_Surface *surface, int color[3], CPG_Rect rect) {
 void draw_rect(CPG_Obj *obj, int color[3], CPG_Rect rect) {
 	switch (obj->type) {
 		case TYPE_CPG_WINDOW: ;
-			draw_rect_window((CPG_Window *)obj, color, rect);
+			draw_rect_window(ToCPG_Window(obj), color, rect);
 			break;
 
 		case TYPE_CPG_SURFACE: ;
-			draw_rect_surface((CPG_Surface *)obj, color, rect);
+			draw_rect_surface(ToCPG_Surface(obj), color, rect);
 			break;
 	
 		deafult:
