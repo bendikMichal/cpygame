@@ -32,8 +32,8 @@ int CPG_main (int argc, char *argv[]) {
 	bool main = true;
 	while (main) {
 		// handling events
-		while( SDL_PollEvent( &cpg.event ) ){
-			if( cpg.event.type == SDL_QUIT ){
+		while( SDL_PollEvent( &cpg.event ) ) {
+			if( cpg.event.type == SDL_QUIT ) {
 					main = false;
 			}
 		}

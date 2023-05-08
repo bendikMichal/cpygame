@@ -53,6 +53,8 @@ void init() {
 
 	cpg.draw.circle = &draw_circle;
 
+	cpg.transform.rotate = &transform_rotate;
+
 	// keys
 	cpg.K_0 = SDL_SCANCODE_0;
 	cpg.K_1 = SDL_SCANCODE_1;

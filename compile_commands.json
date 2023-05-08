@@ -1,7 +1,7 @@
 [
 	{
 		"directory": "./",
-		"command": "gcc -o test test.c cpygame.c libs/mouse.c libs/display.c libs/window.c libs/image.c libs/surface.c libs/font.c libs/rect.c libs/key.c -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf",
+		"command": "gcc -o test test.c cpygame.c libs/mouse.c libs/display.c libs/window.c libs/image.c libs/surface.c libs/font.c libs/rect.c libs/key.c libs/clock.c libs/draw.c libs/circle.c -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf",
 		"file": "test.c"
 	}
 ]

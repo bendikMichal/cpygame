@@ -36,6 +36,7 @@ int CPG_main(int argc, char *argv[]) {
 
 	// loading images
 	SDL_Texture *image = cpg.image.load("mountains_1.png");
+	SDL_Texture *image_rot = cpg.transform.rotate(image, 45);
 
 	// loading fonts
 	cpg.font.SysFont("minecraft_font.ttf", 12);
@@ -68,6 +69,8 @@ int CPG_main(int argc, char *argv[]) {
 
 		/* window.blit(surf.surface, corner); */
 		window.blit(text, corner);
+		/* window.blit_rot(image, corner, 90); */
+		window.blit(image_rot, corner);
 
 		cpg.display.update();
 		cpg.clock.tick(fps);

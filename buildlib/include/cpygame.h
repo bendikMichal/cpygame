@@ -1,7 +1,8 @@
 
-#ifndef _CPYGAME_H
-#define _CPYGAME_H
+# ifndef _CPYGAME_H
+# define _CPYGAME_H
 
+/*<------------ FUNCTION DEFINITIONS ------------>*/
 # ifndef main
 # define CPG_main(argc, argv) main(argc, argv)
 # endif
@@ -10,8 +11,16 @@
 # define CPG_main(argc, argv) SDL_main(argc, argv)
 # endif
 
+# define dist(x, y) (sqrt(pow(x[0] - y[0], 2) + pow(x[1] - y[1], 2)))
+# define arrlen(x) (int)(sizeof(x)/sizeof(x[0]))
+
+/*<------------ CONSTANTS DEFINITIONS ------------>*/
 # define MILISECOND 1000
 # define DEFAULT_FPS 60
+# define pi 3.14159265358
+
+# define TOPLEFT (int[2]){0, 0}
+
 
 /*
  *	How the including works:
@@ -31,6 +40,7 @@
 # include "libs/key.h"
 # include "libs/clock.h"
 # include "libs/draw.h"
+# include "libs/transform.h"
 
 typedef struct cpygame {
 	void (*init)();
@@ -46,6 +56,7 @@ typedef struct cpygame {
 	Key key;
 	Clock clock;
 	Draw draw;
+	Transform transform;
 
 	CPG_Surface (*Surface) (int [2]);
 	CPG_Rect (*Rect) (float, float, float, float);
@@ -120,5 +131,5 @@ extern cpygame *cpgP;
 void init ();
 void quit ();
 
-#endif
+# endif
 
