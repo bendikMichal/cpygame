@@ -60,12 +60,13 @@ SDL_Texture* transform_rotate (SDL_Texture *texture, int angle) {
 
 	// create transparent surface
 	SDL_Surface *surface = SDL_CreateRGBSurface(0, w, h, 32, 0, 0, 0, 0);
-	SDL_SetColorKey(surface, SDL_TRUE, SDL_MapRGB(surface->format, 255, 0, 255));
-	/* SDL_FillRect(surface, NULL, SDL_MapRGB(surface->format, 255, 0, 255)); */
-	SDL_FillRect(surface, NULL, SDL_MapRGB(surface->format, 255, 0, 0));
+	SDL_SetColorKey(surface, SDL_TRUE, SDL_MapRGBA(surface->format, 255, 0, 255, 0));
+	SDL_FillRect(surface, NULL, SDL_MapRGBA(surface->format, 255, 0, 255, 0));
+	/* SDL_FillRect(surface, NULL, SDL_MapRGBA(surface->format, 255, 0, 0, 0)); */
+
 
 	// create new texture
-	SDL_Texture *new_texture = SDL_CreateTexture(cpg.window.renderer, surface->format.format, SDL_TEXTUREACCESS_TARGET, w, h);
+	SDL_Texture *new_texture = SDL_CreateTexture(cpg.window.renderer, surface->format->format, SDL_TEXTUREACCESS_TARGET, w, h);
 
 	// paste surface pixeldata to new_texture
 	SDL_UpdateTexture(new_texture, NULL, surface->pixels, surface->pitch);
