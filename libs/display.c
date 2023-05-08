@@ -12,6 +12,7 @@
 static CPG_Window def_window = {
 	.fill = &window_fill,
 	.blit = &window_blit,
+	.scaled_blit = &window_scaled_blit,
 	.blit_rot = &window_blit_rot,
 	.type = TYPE_CPG_WINDOW
 };
