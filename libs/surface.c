@@ -14,6 +14,7 @@ CPG_Surface surface_Surface(int size[2]) {
 	CPG_Surface surf = {
 		.surface = newSurf,
 		.blit = &surface_blit,
+		.blit_rot = &surface_blit_rot,
 		.fill = &surface_fill,
 		.type = TYPE_CPG_SURFACE
 	};
@@ -25,6 +26,16 @@ void surface_blit(CPG_Surface self, SDL_Texture *src, int pos[2]) {
 
 	// this works because window_blit renders to current target not window specificaly
 	window_blit(src, pos);
+
+	// set target back to window
+	SDL_SetRenderTarget(cpg.window.renderer, NULL);
+}
+
+void surface_blit_rot(CPG_Surface self, SDL_Texture *src, int pos[2], int angle) {
+	SDL_SetRenderTarget(cpg.window.renderer, self.surface);
+
+	// this works because window_blit renders to current target not window specificaly
+	window_blit_rot(src, pos, angle);
 
 	// set target back to window
 	SDL_SetRenderTarget(cpg.window.renderer, NULL);
