@@ -19,7 +19,7 @@ void window_blit(SDL_Texture *texture, int pos[2]){
 	SDL_RenderCopy(cpg.window.renderer, texture, &src, &dest);
 }
 
-void window_scaled_blit(SDL_Texture *texture, int pos[2]){
+void window_scaled_blit(SDL_Texture *texture){
 	SDL_RenderCopy(cpg.window.renderer, texture, NULL, NULL);
 }
 

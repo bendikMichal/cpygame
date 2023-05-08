@@ -9,7 +9,7 @@ typedef struct CPG_Surface {
 	int type;
 	
 	void (*blit) (struct CPG_Surface, SDL_Texture*, int[2]);
-	void (*scaled_blit) (struct CPG_Surface, SDL_Texture*, int[2]);
+	void (*scaled_blit) (struct CPG_Surface, SDL_Texture*);
 	void (*blit_rot) (struct CPG_Surface, SDL_Texture*, int[2], int);
 	void (*fill) (struct CPG_Surface, int[3]);
 
@@ -19,7 +19,7 @@ typedef struct CPG_Surface {
 
 CPG_Surface surface_Surface(int size[2]);
 void surface_blit(CPG_Surface self, SDL_Texture *src, int pos[2]);
-void surface_scaled_blit(CPG_Surface self, SDL_Texture *src, int pos[2]);
+void surface_scaled_blit(CPG_Surface self, SDL_Texture *src);
 void surface_blit_rot(CPG_Surface self, SDL_Texture *src, int pos[2], int angle);
 void surface_fill(CPG_Surface self, int color[3]);
 

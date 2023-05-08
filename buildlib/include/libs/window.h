@@ -10,7 +10,7 @@ typedef struct CPG_Window {
 	int type;
 
 	void (*blit)(SDL_Texture*, int[2]);
-	void (*scaled_blit)(SDL_Texture*, int[2]);
+	void (*scaled_blit)(SDL_Texture*);
 	void (*blit_rot)(SDL_Texture*, int[2], int);
 	void (*fill)(int[3]);
 
@@ -22,7 +22,7 @@ typedef struct CPG_Window {
 
 // surface will require self to be passed as there are multiple instances
 void window_blit(SDL_Texture *texture, int pos[2]);
-void window_scaled_blit(SDL_Texture *texture, int pos[2]);
+void window_scaled_blit(SDL_Texture *texture);
 void window_blit_rot(SDL_Texture *texture, int pos[2], int angle);
 void window_fill(int color[3]);
 

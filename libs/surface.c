@@ -32,10 +32,10 @@ void surface_blit(CPG_Surface self, SDL_Texture *src, int pos[2]) {
 	SDL_SetRenderTarget(cpg.window.renderer, NULL);
 }
 
-void surface_scaled_blit(CPG_Surface self, SDL_Texture *src, int pos[2]){
+void surface_scaled_blit(CPG_Surface self, SDL_Texture *src){
 	SDL_SetRenderTarget(cpg.window.renderer, self.surface);
 
-	window_scaled_blit(src, pos);
+	window_scaled_blit(src);
 
 	// set target back to window
 	SDL_SetRenderTarget(cpg.window.renderer, NULL);
