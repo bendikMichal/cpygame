@@ -40,7 +40,7 @@ float rect_get_right (CPG_Rect *rect) {
 }
 
 bool rect_colliderect(CPG_Rect *self, CPG_Rect *rect) {
-	return (rect->x - self->w < self->x < rect->x + rect->w) && (rect->y - self->h < self->y < rect->y + rect->h);
+    return self->x < rect->x + rect->w && self->x + self->w > rect->x && self->y < rect->y + rect->h && self->h + self->y > rect->y;
 }
 
 CPG_Rect rect_Rect (float x, float y, float w, float h) {
