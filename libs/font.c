@@ -20,5 +20,6 @@ SDL_Texture* font_render(char *text, bool antialias, SDL_Color color) {
 	SDL_Surface* srf = TTF_RenderText_Solid(cpg.font.font, text, color); 
 	SDL_Texture* tex = SDL_CreateTextureFromSurface(cpg.window.renderer, srf);
 
+	SDL_FreeSurface(srf);
 	return tex;
 }
