@@ -90,11 +90,11 @@ void draw_circle_window(CPG_Window *window, int color[3], CPG_Circle c, int bord
 
 		// fill
 		while (sx <= c.x && sy <= c.y) {
-			if (round(sqrt(pow(abs((int)c.x - sx), 2) + pow(abs((int)c.y - sy), 2))) <= c.r) {
-				SDL_RenderDrawPoint(cpg.window.renderer, sx, sy);
-				SDL_RenderDrawPoint(cpg.window.renderer, (c.x - sx) + c.x, sy);
-				SDL_RenderDrawPoint(cpg.window.renderer, sx, (c.y - sy) + c.y);
-				SDL_RenderDrawPoint(cpg.window.renderer, (c.x - sx) + c.x, (c.y - sy) + c.y);
+			if (round(sqrt(pow(abs((int)c.x - sx), 2) + pow(abs((int)c.y - sy), 2))) == c.r) {
+				SDL_RenderDrawLine(cpg.window.renderer, sx, sy, c.x, c.y);
+				SDL_RenderDrawLine(cpg.window.renderer, (c.x - sx) + c.x, sy, c.x, c.y);
+				SDL_RenderDrawLine(cpg.window.renderer, sx, (c.y - sy) + c.y, c.x, c.y);
+				SDL_RenderDrawLine(cpg.window.renderer, (c.x - sx) + c.x, (c.y - sy) + c.y, c.x, c.y);
 			}	
 
 			sx ++;
