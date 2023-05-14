@@ -3,7 +3,7 @@
 # define _WINDOW_H
 
 
-#include <SDL2/SDL_render.h>
+# include <SDL2/SDL_render.h>
 
 typedef struct CPG_Window {
 	// order of these is very important, wrong orderwill crash the lib
