@@ -1,6 +1,6 @@
 
-#ifndef _KEY_H
-#define _KEY_H
+# ifndef _KEY_H
+# define _KEY_H
 
 # include <SDL2/SDL_stdinc.h>
 
@@ -11,4 +11,4 @@ typedef struct Key {
 
 } Key;
 
-#endif
+# endif
