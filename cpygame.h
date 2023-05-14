@@ -3,6 +3,7 @@
 # define _CPYGAME_H
 
 /*<------------ FUNCTION DEFINITIONS ------------>*/
+#include <SDL2/SDL_events.h>
 # ifndef main
 # define CPG_main(argc, argv) main(argc, argv)
 # endif
@@ -41,12 +42,13 @@
 # include "libs/clock.h"
 # include "libs/draw.h"
 # include "libs/transform.h"
+# include "libs/event.h"
 
 typedef struct cpygame {
 	void (*init)();
 	void (*quit)();
 
-	SDL_Event event;
+	Event event;
 
 	CPG_Window window;
 	Mouse mouse;
@@ -130,6 +132,7 @@ extern cpygame *cpgP;
 
 void init ();
 void quit ();
+
 
 # endif
 

@@ -19,13 +19,14 @@ gcc -o buildlib/clock.o -c libs/clock.c -lSDL2
 gcc -o buildlib/draw.o -c libs/draw.c -lSDL2
 gcc -o buildlib/circle.o -c libs/circle.c -lSDL2
 gcc -o buildlib/transform.o -c libs/transform.c -lSDL2
+gcc -o buildlib/event.o -c libs/event.c -lSDL2
 
 copy cpygame.h "buildlib/include"
 robocopy libs buildlib/include/libs *.h /E
 
 cd buildlib
 :: gcc -shared -o libcpygame.so cpygame.o display.o image.o mouse.o surface.o window.o -lmingw32 -lSDL2main -lSDL2 -lSDL2_image
-ar rcs libcpygame.a cpygame.o display.o image.o mouse.o surface.o window.o rect.o font.o key.o clock.o draw.o circle.o transform.o
+ar rcs libcpygame.a cpygame.o display.o image.o mouse.o surface.o window.o rect.o font.o key.o clock.o draw.o circle.o transform.o event.o
 move libcpygame.a lib
 del *.o
 cd ..

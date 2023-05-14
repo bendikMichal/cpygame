@@ -1,5 +1,5 @@
-# include <stdio.h>
 
+# include <stdio.h>
 # include <stdbool.h>
 # include <string.h>
 # include <math.h>
@@ -49,10 +49,13 @@ int CPG_main(int argc, char *argv[]) {
 	bool main = true;
 	while (main) {
 		// handling events
-		while( SDL_PollEvent( &cpg.event ) ){
-			if( cpg.event.type == SDL_QUIT ){
+		while( cpg.event.get() ){
+			if( cpg.event.event.type == SDL_QUIT ){
 					main = false;
 			}
+
+			bool *mouse_buttons = cpg.mouse.get_pressed();
+			if (mouse_buttons[1]) printf("Hello world\n");
 		}
 
 		if (keys[cpg.K_a]) {

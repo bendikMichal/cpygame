@@ -26,12 +26,13 @@ gcc -o buildlib/clock.o -c libs/clock.c -lSDL2
 gcc -o buildlib/draw.o -c libs/draw.c -lSDL2
 gcc -o buildlib/circle.o -c libs/circle.c -lSDL2
 gcc -o buildlib/transform.o -c libs/transform.c -lSDL2
+gcc -o buildlib/event.o -c libs/event.c -lSDL2
 
 cp cpygame.h ./buildlib/include
 cp ./libs/*.h ./buildlib/include/libs
 
 cd buildlib
-ar rcs libcpygame.a cpygame.o display.o image.o mouse.o surface.o window.o rect.o font.o key.o clock.o draw.o circle.o transform.o
+ar rcs libcpygame.a cpygame.o display.o image.o mouse.o surface.o window.o rect.o font.o key.o clock.o draw.o circle.o transform.o event.o
 mv libcpygame.a lib
 rm ./*.o
 cd ..

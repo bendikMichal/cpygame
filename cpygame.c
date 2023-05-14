@@ -24,7 +24,10 @@ void init() {
 	cpgP = (cpygame *) calloc(1, sizeof(cpygame));
 	/* printf("%llu", sizeof(cpygame)); */
 
+	cpg.event.get = &event_get;
+
 	cpg.mouse.get_pos = &mouse_get_pos;
+	cpg.mouse.get_pressed = &mouse_get_pressed;
 
 	cpg.init = &init;
 	cpg.quit = &quit;
@@ -121,7 +124,7 @@ void init() {
 
 	SDL_Event event;
 
-	cpg.event = event;
+	cpg.event.event = event;
 };
 
 
