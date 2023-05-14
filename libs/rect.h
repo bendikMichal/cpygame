@@ -53,4 +53,4 @@ bool rect_colliderect(CPG_Rect *self, CPG_Rect *rect);
 
 CPG_Rect rect_Rect (float x, float y, float w, float h);
 
-#endif
+# endif
