@@ -4,7 +4,7 @@
 # include <math.h>
 
 # include "../cpygame.h"
-#include "Type.h"
+# include "Type.h"
 
 void draw_rect_window(CPG_Window *window, int color[3], CPG_Rect rect) {
 	SDL_Rect temp = {rect.x, rect.y, rect.w, rect.h};
