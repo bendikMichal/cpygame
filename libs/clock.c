@@ -1,7 +1,7 @@
 
-#include <SDL2/SDL_stdinc.h>
 # include <stdio.h>
 # include <SDL2/SDL.h>
+# include <SDL2/SDL_stdinc.h>
 
 # include "../cpygame.h"
 
