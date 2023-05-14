@@ -23,4 +23,4 @@ void surface_scaled_blit(CPG_Surface self, SDL_Texture *src);
 void surface_blit_rot(CPG_Surface self, SDL_Texture *src, int pos[2], int angle);
 void surface_fill(CPG_Surface self, int color[3]);
 
-#endif
+# endif
