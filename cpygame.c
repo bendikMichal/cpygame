@@ -131,6 +131,8 @@ void init() {
 void quit() {
 	SDL_DestroyRenderer(cpg.window.renderer);
 	SDL_DestroyWindow(cpg.window.window);
+
+	mixer_quit();
 	IMG_Quit();
 	TTF_Quit();
 	SDL_Quit();

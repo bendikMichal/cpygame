@@ -43,6 +43,7 @@
 # include "libs/draw.h"
 # include "libs/transform.h"
 # include "libs/event.h"
+# include "libs/mixer.h"
 
 typedef struct cpygame {
 	void (*init)();
@@ -59,6 +60,7 @@ typedef struct cpygame {
 	Clock clock;
 	Draw draw;
 	Transform transform;
+	Mixer mixer;
 
 	CPG_Surface (*Surface) (int [2]);
 	CPG_Rect (*Rect) (float, float, float, float);

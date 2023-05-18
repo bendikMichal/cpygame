@@ -5,12 +5,14 @@
 # include <math.h>
 
 # include <cpygame.h>
+# include <SDL2/SDL_mixer.h>
 /* # include "cpygame.h" */
 
 
 int CPG_main(int argc, char *argv[]) {
 /* int SDL_main(int argc, char *argv[]) { */
 	cpg.init();
+	mixer_init(44100, MIX_DEFAULT_FORMAT, 2, 2048);
 
 	// others
 	int red[3] = {255, 0, 0};

@@ -5,7 +5,7 @@ mkdir include
 mkdir lib
 cd ..
 
-gcc -o buildlib/cpygame.o -c cpygame.c -lSDL2 -lSDL2_image
+gcc -o buildlib/cpygame.o -c cpygame.c -lSDL2 -lSDL2_image -lSDL2_ttf -lSLD2_mixer
 
 gcc -o buildlib/display.o -c libs/display.c -lSDL2 -lSDL2_image
 gcc -o buildlib/image.o -c libs/image.c -lSDL2 -lSDL2_image
@@ -20,13 +20,14 @@ gcc -o buildlib/draw.o -c libs/draw.c -lSDL2
 gcc -o buildlib/circle.o -c libs/circle.c -lSDL2
 gcc -o buildlib/transform.o -c libs/transform.c -lSDL2
 gcc -o buildlib/event.o -c libs/event.c -lSDL2
+gcc -o buildlib/mixer.o -c libs/mixer.c -lSDL2
 
 copy cpygame.h "buildlib/include"
 robocopy libs buildlib/include/libs *.h /E
 
 cd buildlib
 :: gcc -shared -o libcpygame.so cpygame.o display.o image.o mouse.o surface.o window.o -lmingw32 -lSDL2main -lSDL2 -lSDL2_image
-ar rcs libcpygame.a cpygame.o display.o image.o mouse.o surface.o window.o rect.o font.o key.o clock.o draw.o circle.o transform.o event.o
+ar rcs libcpygame.a cpygame.o display.o image.o mouse.o surface.o window.o rect.o font.o key.o clock.o draw.o circle.o transform.o event.o mixer.o
 move libcpygame.a lib
 del *.o
 cd ..
