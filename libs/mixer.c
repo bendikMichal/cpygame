@@ -12,5 +12,6 @@ void mixer_init(int frequency, Uint16 format, int channels, int chunksize) {
 }
 
 void mixer_quit() {
+	Mix_Quit();
 	Mix_CloseAudio();
 }
