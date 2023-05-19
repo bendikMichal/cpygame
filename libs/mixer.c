@@ -30,8 +30,8 @@ void mixer_Sound_play(CPG_Sound sound) {
 	Mix_PlayChannel(-1, sound.sound, 0);
 }
 
-void mixer_Sound_Free(Mix_Chunk *sound) {
-	Mix_FreeChunk(sound);
+void mixer_Sound_Free(CPG_Sound sound) {
+	Mix_FreeChunk(sound.sound);
 }
 
 
@@ -53,8 +53,8 @@ void mixer_music_play(CPG_Music music, int loops) {
 	Mix_PlayMusic(music.music, loops);
 }
 
-void mixer_music_Free(Mix_Music *music) {
-	Mix_FreeMusic(music);
+void mixer_music_Free(CPG_Music music) {
+	Mix_FreeMusic(music.music);
 }
 
 

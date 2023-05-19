@@ -46,7 +46,10 @@ int CPG_main(int argc, char *argv[]) {
 
 	// loading music
 	CPG_Music music = cpg.mixer.music.load("main_theme.wav");
-	music.play(music, -1);
+
+	// loading sounds
+	CPG_Sound sound = cpg.mixer.Sound("main_theme.wav");
+	sound.play(sound);
 
 	const Uint8 *keys = cpg.key.get_pressed();
 
@@ -95,7 +98,8 @@ int CPG_main(int argc, char *argv[]) {
 	SDL_DestroyTexture(text);
 	/* SDL_DestroyTexture(surf.surface); */
 
-	music.Free(music.music);
+	music.Free(music);
+	sound.Free(sound);
 	cpg.quit();
 	return 0;
 }

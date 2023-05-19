@@ -9,7 +9,7 @@ typedef struct CPG_Sound {
 	Mix_Chunk *sound;
 
 	void (* play) (struct CPG_Sound);
-	void (* Free) (Mix_Chunk *);
+	void (* Free) (struct CPG_Sound);
 
 } CPG_Sound;
 
@@ -18,7 +18,7 @@ typedef struct CPG_Music {
 	Mix_Music *music;
 
 	void (* play) (struct CPG_Music, int);
-	void (* Free) (Mix_Music *);
+	void (* Free) (struct CPG_Music);
 
 } CPG_Music;
 
@@ -41,10 +41,10 @@ void mixer_quit();
 
 CPG_Sound mixer_Sound(char *soundPath);
 void mixer_Sound_play(CPG_Sound sound);
-void mixer_Sound_Free(Mix_Chunk *sound);
+void mixer_Sound_Free(CPG_Sound sound);
 
 CPG_Music mixer_music_load(char *musicPath);
 void mixer_music_play(CPG_Music music, int loops);
-void mixer_music_Free(Mix_Music *music);
+void mixer_music_Free(CPG_Music music);
 
 # endif

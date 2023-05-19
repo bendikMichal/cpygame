@@ -53,7 +53,7 @@ int CPG_main (int argc, char *argv[]) {
 	}
 	
     // free created music
-	music.Free(music.music);
+	music.Free(music);
 	cpg.quit();
 	return 0;
 }
