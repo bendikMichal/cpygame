@@ -29,6 +29,10 @@ int CPG_main (int argc, char *argv[]) {
 	CPG_Window Window = cpg.display.set_mode(size, 0);
 	cpg.display.set_caption("Some name");
 
+	// loading music
+	CPG_Music music = cpg.mixer.music.load("someMusic.wav");
+	music.play(music, -1);
+
 	bool main = true;
 	while (main) {
 		// handling events
@@ -48,6 +52,8 @@ int CPG_main (int argc, char *argv[]) {
 
 	}
 	
+    // free created music
+	music.Free(music.music);
 	cpg.quit();
 	return 0;
 }
@@ -55,5 +61,5 @@ int CPG_main (int argc, char *argv[]) {
 ```
 
 ### Disclaimer: 
-* This is NOT official port of pygame for c!
-* This library/framework depends on SDL2 to work properly.
+* This is *NOT* official port of pygame for c!
+* This library/framework depends on *SDL2* to work properly.

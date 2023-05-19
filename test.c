@@ -12,7 +12,7 @@
 int CPG_main(int argc, char *argv[]) {
 /* int SDL_main(int argc, char *argv[]) { */
 	cpg.init();
-	mixer_init(44100, MIX_DEFAULT_FORMAT, 2, 2048);
+	cpg.mixer.init(44100, MIX_DEFAULT_FORMAT, 2, 2048);
 
 	// others
 	int red[3] = {255, 0, 0};
@@ -43,6 +43,10 @@ int CPG_main(int argc, char *argv[]) {
 	// loading fonts
 	cpg.font.SysFont("minecraft_font.ttf", 12);
 	SDL_Texture *text = cpg.font.render("hello world", false, white);
+
+	// loading music
+	CPG_Music music = cpg.mixer.music.load("main_theme.wav");
+	music.play(music, -1);
 
 	const Uint8 *keys = cpg.key.get_pressed();
 
@@ -91,6 +95,7 @@ int CPG_main(int argc, char *argv[]) {
 	SDL_DestroyTexture(text);
 	/* SDL_DestroyTexture(surf.surface); */
 
+	music.Free(music.music);
 	cpg.quit();
 	return 0;
 }

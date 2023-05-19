@@ -10,6 +10,8 @@
 # define TYPE_CPG_SURFACE 1
 # define TYPE_CPG_RECT 2
 # define TYPE_CPG_CIRCLE 3
+# define TYPE_CPG_SOUND 4
+# define TYPE_CPG_MUSIC 5
 
 typedef struct {
     int type;
@@ -21,5 +23,8 @@ typedef struct {
 # define ToCPG_Window(x) ((CPG_Window *)x)
 # define ToCPG_Surface(x) ((CPG_Surface *)x)
 # define ToCPG_Rect(x) ((CPG_Rect *)x)
+# define ToCPG_Circle(x) ((CPG_Circle *)x)
+# define ToCPG_Sound(x) ((CPG_Sound *)x)
+# define ToCPG_Mixer(x) ((CPG_Mixer *)x)
 
 # endif

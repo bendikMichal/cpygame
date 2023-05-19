@@ -58,6 +58,11 @@ void init() {
 
 	cpg.transform.rotate = &transform_rotate;
 
+	cpg.mixer.init = &mixer_init;
+	cpg.mixer.quit = &mixer_quit;
+	cpg.mixer.Sound = &mixer_Sound;
+	cpg.mixer.music.load = &mixer_music_load;
+
 	// keys
 	cpg.K_0 = SDL_SCANCODE_0;
 	cpg.K_1 = SDL_SCANCODE_1;
