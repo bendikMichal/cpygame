@@ -126,6 +126,7 @@ typedef struct cpygame {
 	int K_RIGHT;
 
 	int K_SPACE;
+	int K_ESCAPE;
 	//
 } cpygame;
 

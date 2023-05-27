@@ -50,7 +50,6 @@ int CPG_main(int argc, char *argv[]) {
 	// loading sounds
 	CPG_Sound sound = cpg.mixer.Sound("main_theme.wav", 0);
 	sound.play(sound, -1);
-	sound.stop(sound);
 
 	const Uint8 *keys = cpg.key.get_pressed();
 
