@@ -33,12 +33,12 @@ int CPG_main (int argc, char *argv[]) {
 	CPG_Music music = cpg.mixer.music.load("someMusic.wav");
 	music.play(music, -1);
 
-	bool main = true;
-	while (main) {
+	bool running = true;
+	while (running) {
 		// handling events
 		while( cpg.event.get() ){
 			if( cpg.event.event.type == SDL_QUIT ){
-					main = false;
+					running = false;
 			}
 
 			bool *mouse_buttons = cpg.mouse.get_pressed();
