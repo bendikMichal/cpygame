@@ -22,7 +22,7 @@ CPG_Window display_set_mode(int size[2], int falgs) {
 
 	static SDL_Renderer *renderer;
 	renderer = SDL_CreateRenderer(sdl_window, -1, 0);
-    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 
 	CPG_Window window = def_window;
 
